@@ -111,6 +111,7 @@ class App {
   constructor() {
     this._getPosition();
     this._getLocalStorage();
+    this._getNewFeature();
 
     //events handler
     form.addEventListener('submit', this._updateWorkout.bind(this));
@@ -711,81 +712,13 @@ class App {
     this._displayQuestion();
     localStorage.clear();
   }
+
+  _getNewFeature() {
+    console.log('Here is a new feature');
+  }
 }
 
 const app = new App();
 
-// class A {
-//   name;
-//   constructor(firstName, birthYear) {
-//     this.firstName = firstName;
-//     this.birthYear = birthYear;
-//   }
-// }
-
-// class Aa extends A {
-//   name = 'Trinh';
-//   constructor(firstName, birthYear, sexe) {
-//     super(firstName, birthYear);
-//     this.sexe = sexe;
-//     this.calcAge();
-//   }
-
-//   calcAge() {
-//     this.age = 2030 - this.birthYear;
-//     return this.age;
-//   }
-
-//   sayHello() {
-//     console.log(
-//       `Hello ${this.firstName} ${this.name}, you are ${this.age}. You are ${this.sexe} `
-//     );
-//   }
-// }
-
-// const duong = new Aa('Duong', 1993, 'women');
-
-// duong.sayHello();
-
-// const arr1 = [1, 2, 5, 7, 8, 4, 2, 7, 12];
-
 const run2 = new Running([39, -12], 2, 100, 124);
 const workouts = [run1, cycling1, run2];
-
-//compare letter
-const ascendingWorkType = function (arr, el) {
-  return arr.sort((obj1, obj2) => obj1[el].localeCompare(obj2[el]));
-};
-
-console.log(ascendingWorkType(workouts, 'type'));
-// const ascending = function (work1, work2) {
-//   return work1.distance - work2.distance;
-// };
-const ascending = function (arr, el) {
-  return arr.sort((obj1, obj2) => obj1[el] - obj2[el]);
-};
-
-// const ascending = function (work1, work2) {
-//   return work1.el - work2.el;
-// };
-const descending = function (arr, el) {
-  return arr.sort((obj1, obj2) => obj2[el] - obj1[el]);
-};
-
-// const sortedWorkouts = [];
-// console.log(workouts);
-
-// const arrElSorting = workouts.map(work => work.distance).sort(ascending);
-
-// arrElSorting.forEach(function (el) {
-//   workouts.find(function (work) {
-//     if (el === work.distance) {
-//       sortedWorkouts.push(work);
-//     }
-//   });
-// });
-
-// console.log(arrElSorting, sortedWorkouts, workouts);
-
-// console.log(ascending(workouts, 'distance'));
-// console.log(workouts.sort(descending));
